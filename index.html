@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="./styles.css">
+<script src="./image-slot.js"></script>
+<style>
+  body{-webkit-font-smoothing:antialiased}
+  .wire-link{color:inherit;text-decoration:none}
+  .wire-link:hover{color:var(--color-accent)}
+  .grid-cell{border-right:2px solid var(--color-divider)}
+  .grid-cell:last-child{border-right:none}
+  @media (max-width:900px){.wire-hide-mobile{display:none}}
+</style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);min-height:100vh;font-family:var(--font-body)">
+
+<nav class="nav" style="position:sticky;top:0;background:var(--color-bg);z-index:50;padding:16px 40px">
+  <a href="#top" class="nav-brand wire-link">{{ companyName }}</a>
+  <a href="#about" class="wire-link wire-hide-mobile" style="text-decoration:none;font-size:14px">關於我們</a>
+  <a href="#services" class="wire-link wire-hide-mobile" style="text-decoration:none;font-size:14px">服務項目</a>
+  <a href="#equipment" class="wire-link wire-hide-mobile" style="text-decoration:none;font-size:14px">設備介紹</a>
+  <a href="#work" class="wire-link wire-hide-mobile" style="text-decoration:none;font-size:14px">作品案例</a>
+  <a href="#contact" class="btn btn-primary">立即詢價</a>
+</nav>
+
+<header id="top" style="border-bottom:2px solid var(--color-divider);display:grid;grid-template-columns:1.1fr 1fr">
+  <div style="padding:80px 48px;display:flex;flex-direction:column;justify-content:center;gap:24px;border-right:2px solid var(--color-divider)">
+    <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent);font-weight:800">精密線切割加工代工廠</div>
+    <h1 style="font-size:56px;line-height:1.05;max-width:600px">全台規模最大<br>線切割加工廠</h1>
+    <p style="font-size:16px;max-width:520px;opacity:0.8">100 台以上線切割設備全天候輪班運作，提供高精度、快交期的線切割加工服務，材質涵蓋碳鋼、合金鋼、不鋼與硬質合金，量產與單件皆可承接。</p>
+    <div style="display:flex;gap:12px;margin-top:8px">
+      <a href="#contact" class="btn btn-primary">線上詢價</a>
+      <a href="#equipment" class="btn btn-secondary">查看設備</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:32px;border-top:2px solid var(--color-divider)">
+      <div style="padding:16px 0 0;border-right:2px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">20+</div>
+        <div style="font-size:12px;opacity:0.65">線切割機台數</div>
+      </div>
+      <div style="padding:16px 0 0;border-right:2px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">±0.002mm</div>
+        <div style="font-size:12px;opacity:0.65">加工精度</div>
+      </div>
+      <div style="padding:16px 0 0">
+        <div style="font-family:var(--font-heading);font-weight:800;font-size:28px">24hr</div>
+        <div style="font-size:12px;opacity:0.65">最快交期</div>
+      </div>
+    </div>
+  </div>
+  <div style="min-height:460px">
+    <image-slot id="hero-photo" shape="rect" placeholder="放置線切割加工現場照片" style="filter:grayscale(1) contrast(1.08)"></image-slot>
+  </div>
+</header>
+
+<section id="about" style="border-bottom:2px solid var(--color-divider);display:grid;grid-template-columns:1fr 1fr">
+  <div style="min-height:420px;border-right:2px solid var(--color-divider)">
+    <image-slot id="about-photo" shape="rect" placeholder="放置工廠外觀或團隊照片" style="filter:grayscale(1) contrast(1.08)"></image-slot>
+  </div>
+  <div style="padding:64px 48px;display:flex;flex-direction:column;gap:20px;justify-content:center">
+    <div class="tag tag-outline">關於我們</div>
+    <h2 style="font-size:32px">深耕線切割加工<br>規模與效率兼具</h2>
+    <p style="opacity:0.8;font-size:15px">{{ companyName }}專注於線切割加工代工服務，以規模化設備投資與嚴謹製程管理，為模具廠、精密機械廠與各類製造業客戶提供穩定、快速且具競爭力的加工方案。</p>
+    <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2.5" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div><strong>加工精度高</strong><div style="font-size:13px;opacity:0.7">公差控制精準，滿足模具與精密零件需求</div></div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2.5" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div><strong>交期快速</strong><div style="font-size:13px;opacity:0.7">全天候輪班生產，急件另有加急服務</div></div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2.5" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div><strong>設備規模最大</strong><div style="font-size:13px;opacity:0.7">20 台以上線切割機台，大小工件皆可承接</div></div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2.5" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div><strong>價格具競爭力</strong><div style="font-size:13px;opacity:0.7">規模優勢降低單位成本，量產報價更具彈性</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="border-bottom:2px solid var(--color-divider);padding:64px 48px">
+  <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:12px">
+    <div>
+      <div class="tag tag-outline" style="margin-bottom:12px">服務項目</div>
+      <h2 style="font-size:32px">加工能力範圍</h2>
+    </div>
+    <p style="max-width:420px;font-size:14px;opacity:0.7">從單件試模到量產批次，皆能依需求彈性安排產能與交期。</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--color-divider);border-left:2px solid var(--color-divider)">
+    <div class="grid-cell" style="border-bottom:2px solid var(--color-divider);padding:28px;display:flex;flex-direction:column;gap:12px">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      <div class="card-title">精密線切割</div>
+      <div class="card-body">高精度慢走絲加工，公差可達 ±0.002mm，適用於模具與精密零件</div>
+    </div>
+    <div class="grid-cell" style="border-bottom:2px solid var(--color-divider);padding:28px;display:flex;flex-direction:column;gap:12px">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="0"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+      <div class="card-title">大型工件切割</div>
+      <div class="card-body">大型機台可承接超大尺寸厚料與重型工件，滿足大型模具需求</div>
+    </div>
+    <div class="grid-cell" style="border-bottom:2px solid var(--color-divider);padding:28px;display:flex;flex-direction:column;gap:12px">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <div class="card-title">快速交期加工</div>
+      <div class="card-body">全天候輪班生產，急單最快 24 小時完成交貨</div>
+    </div>
+    <div class="grid-cell" style="border-bottom:2px solid var(--color-divider);padding:28px;display:flex;flex-direction:column;gap:12px">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+      <div class="card-title">客製化加工</div>
+      <div class="card-body">依圖面或樣品客製加工方案，提供試模、打樣與量產一站服務</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;overflow-x:auto">
+    <table class="table">
+      <thead><tr><th>可加工材質</th><th>最大厚度</th><th>加工精度</th><th>表面粗度</th><th>標準交期</th></tr></thead>
+      <tbody>
+        <tr><td>碳鋼 / 合金鋼</td><td>400mm</td><td>±0.002mm</td><td>Ra 0.4</td><td>1–3 個工作日</td></tr>
+        <tr><td>不鋼</td><td>300mm</td><td>±0.003mm</td><td>Ra 0.5</td><td>1–3 個工作日</td></tr>
+        <tr><td>硬質合金</td><td>150mm</td><td>±0.002mm</td><td>Ra 0.4</td><td>2–4 個工作日</td></tr>
+        <tr><td>銅 / 鋁合金</td><td>200mm</td><td>±0.003mm</td><td>Ra 0.5</td><td>1–2 個工作日</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="equipment" style="border-bottom:2px solid var(--color-divider);padding:64px 48px">
+  <div class="tag tag-outline" style="margin-bottom:12px">設備介紹</div>
+  <h2 style="font-size:32px;margin-bottom:36px">全台規模最大的線切割機台陣列</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <image-slot id="eq-1" shape="rect" placeholder="機台照片" style="height:200px;filter:grayscale(1) contrast(1.08)"></image-slot>
+      <div class="card-title">高精度慢走絲機</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tag-neutral">8 台</span><span class="tag tag-neutral">±0.002mm</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <image-slot id="eq-2" shape="rect" placeholder="機台照片" style="height:200px;filter:grayscale(1) contrast(1.08)"></image-slot>
+      <div class="card-title">大型線切割機</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tag-neutral">6 台</span><span class="tag tag-neutral">400mm 厚料</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <image-slot id="eq-3" shape="rect" placeholder="機台照片" style="height:200px;filter:grayscale(1) contrast(1.08)"></image-slot>
+      <div class="card-title">快速線切割機</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tag-neutral">4 台</span><span class="tag tag-neutral">急件專用</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <image-slot id="eq-4" shape="rect" placeholder="機台照片" style="height:200px;filter:grayscale(1) contrast(1.08)"></image-slot>
+      <div class="card-title">中型線切割機</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tag-neutral">4 台</span><span class="tag tag-neutral">一般加工件</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="border-bottom:2px solid var(--color-divider);padding:64px 48px">
+  <div class="tag tag-outline" style="margin-bottom:12px">作品案例</div>
+  <h2 style="font-size:32px;margin-bottom:36px">實績案例</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+      <image-slot id="work-1" shape="rect" placeholder="案例照片" style="height:220px;filter:grayscale(1) contrast(1.08)"></image-slot>
+      <figcaption>沖壓模具鋼件切割 — 合金鋼 · 公差 ±0.002mm</figcaption>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+      <image-slot id="work-2" shape="rect" placeholder="案例照片" style="height:220px;filter:grayscale(1) contrast(1.08)"></image-slot>
+      <figcaption>精密治具零件 — 不鋼 · 量產批次加工</figcaption>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+      <image-slot id="work-3" shape="rect" placeholder="案例照片" style="height:220px;filter:grayscale(1) contrast(1.08)"></image-slot>
+      <figcaption>硬質合金刀模件 — 硬質合金 · 高精度打樣</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section style="background:var(--color-accent);color:var(--color-bg);padding:56px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;border-bottom:2px solid var(--color-divider)">
+  <h2 style="font-size:30px;color:var(--color-bg);max-width:560px">準備好您的下一個精密加工專案了嗎？</h2>
+  <a href="#contact" class="btn" style="background:var(--color-bg);color:var(--color-accent);font-weight:800">立即線上詢價</a>
+</section>
+
+<section id="contact" style="padding:64px 48px;display:grid;grid-template-columns:1fr 1.3fr;gap:0;border-bottom:2px solid var(--color-divider)">
+  <div style="padding-right:48px;border-right:2px solid var(--color-divider);display:flex;flex-direction:column;gap:24px">
+    <div class="tag tag-outline">線上詢價</div>
+    <h2 style="font-size:30px">留下需求，<br>專人為您報價</h2>
+    <p style="font-size:14px;opacity:0.75">填寫加工需求或圖面資訊，我們將於 1 個工作日內回覆報價與交期評估。</p>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:12px">
+      <div style="display:flex;gap:10px;align-items:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <span style="font-size:14px">(02) 0000-0000</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2"><path d="M4 4h16v16H4z" style="display:none"></path><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6z"></path><path d="m22 6-10 7L2 6"></path></svg>
+        <span style="font-size:14px">info@chenggang-wire.example</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2" style="margin-top:1px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span style="font-size:14px">台灣・工業區路 000 號（詳細地址待補）</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec3013" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span style="font-size:14px">週一至週六 08:00–20:00（產線 24 小時輪班）</span>
+      </div>
+    </div>
+  </div>
+  <form style="padding-left:48px;display:flex;flex-direction:column;gap:16px" onsubmit="{{ handleSubmit }}">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="field"><label>姓名 *</label><input class="input" type="text" required="" placeholder="您的姓名"></div>
+      <div class="field"><label>公司名稱</label><input class="input" type="text" placeholder="公司 / 工廠名稱"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="field"><label>聯絡電話 *</label><input class="input" type="tel" required="" placeholder="0912-345-678"></div>
+      <div class="field"><label>Email</label><input class="input" type="email" placeholder="you@example.com"></div>
+    </div>
+    <div class="field">
+      <label>加工需求</label>
+      <div class="seg" style="width:100%">
+        <label class="seg-opt" style="flex:1;justify-content:center"><input type="radio" name="need" checked=""><span>單件打樣</span></label>
+        <label class="seg-opt" style="flex:1;justify-content:center"><input type="radio" name="need"><span>小量試產</span></label>
+        <label class="seg-opt" style="flex:1;justify-content:center"><input type="radio" name="need"><span>量產批次</span></label>
+      </div>
+    </div>
+    <div class="field"><label>需求說明</label><textarea class="input" placeholder="請描述材質、尺寸、公差要求、預計數量與交期需求"></textarea></div>
+    <button type="submit" class="btn btn-primary btn-block" style="margin-top:4px">送出詢價需求</button>
+    <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+      <div style="font-size:13px;color:var(--color-accent-700);margin-top:-8px">已收到您的需求，我們將盡快與您聯繫。</div>
+    </sc-if>
+  </form>
+</section>
+
+<footer style="padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+  <div style="font-family:var(--font-heading);font-weight:800;font-size:15px">{{ companyName }}</div>
+  <div style="display:flex;gap:20px;font-size:13px;opacity:0.7">
+    <a href="#about" class="wire-link" style="text-decoration:none">關於我們</a>
+    <a href="#services" class="wire-link" style="text-decoration:none">服務項目</a>
+    <a href="#equipment" class="wire-link" style="text-decoration:none">設備介紹</a>
+    <a href="#contact" class="wire-link" style="text-decoration:none">線上詢價</a>
+  </div>
+  <div style="font-size:12px;opacity:0.5">© 2026 {{ companyName }}</div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;companyName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;源陞精密線切割&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ submitted: true });
+  };
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      handleSubmit: this.handleSubmit,
+      companyName: this.props.companyName ?? "原陞精密線切割",
+    };
+  }
+}
+</script>
+</body>
+</html>
